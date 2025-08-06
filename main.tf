@@ -34,3 +34,7 @@ resource "azurerm_resource_group" "resource3" {
   name     = "pipeline-resources3"
   location = "centralindia"
 }
+resource "azurerm_resource_group" "resource4" {
+  name     = "pipeline-resources4"
+  location = "centralindia"
+}
