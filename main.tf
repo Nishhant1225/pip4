@@ -18,23 +18,23 @@ provider "azurerm" {
   features {}
   subscription_id = "e8ad8a11-5e89-4545-9309-27ed1a0cd62f"
 }
-resource "azurerm_resource_group" "resource" {
-  name     = "pipeline-resources"
+resource "azurerm_resource_group" "resource55" {
+  name     = "pipeline-resources55"
   location = "centralindia"
 }
-resource "azurerm_resource_group" "resource1" {
-  name     = "pipeline-resources1"
+resource "azurerm_resource_group" "resource9" {
+  name     = "pipeline-resources9"
   location = "centralindia"
 }
-resource "azurerm_resource_group" "resource2" {
-  name     = "pipeline-resources2"
+resource "azurerm_resource_group" "resource7" {
+  name     = "pipeline-resources7"
   location = "centralindia"
 }
-resource "azurerm_resource_group" "resource3" {
-  name     = "pipeline-resources3"
+resource "azurerm_resource_group" "resource6" {
+  name     = "pipeline-resources6"
   location = "centralindia"
 }
-resource "azurerm_resource_group" "resource5" {
-  name     = "pipeline-resources5"
+resource "azurerm_resource_group" "resource8" {
+  name     = "pipeline-resources8"
   location = "centralindia"
 }
