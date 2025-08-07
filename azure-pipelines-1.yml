@@ -4,17 +4,12 @@ trigger: none
 pool:
   name: testing
 
-trigger:
-- main
-
-pool:
-  vmImage: 'ubuntu-latest'
 
 stages:
 - stage: terraforminit
   displayName: 'Terraform init'
   jobs:
-  - job: terraform init
+  - job: terraforminit
     displayName: 'init'
     steps:
     - task: TerraformInstaller@1
