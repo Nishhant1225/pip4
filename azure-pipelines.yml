@@ -1,8 +1,8 @@
 
-trigger:
--None
+trigger: none
 
-pool: Testing
+pool:
+ name: testing
 
 steps:
 - task: TerraformInstaller@1
