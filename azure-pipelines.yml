@@ -12,10 +12,6 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'init'
-- task: TerraformTask@5
-  inputs:
-    provider: 'azurerm'
-    command: 'init'
     backendServiceArm: 'Nishant'
     backendAzureRmStorageAccountName: 'storage552'
     backendAzureRmContainerName: 'cont1'
