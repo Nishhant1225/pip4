@@ -23,7 +23,7 @@ stages:
         backendAzureRmStorageAccountName: 'storage552'
         backendAzureRmContainerName: 'cont1'
         backendAzureRmKey: 'terraform.tfstate'
-- stage: terraforplan
+- stage: terraformplan
   displayName: 'Terraform-plan'
   jobs:
   - job: terraforplan
