@@ -1,0 +1,30 @@
+
+trigger: none
+
+pool:
+  name: testing
+
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+- stage: terraforminit
+  displayName: 'Terraform init'
+  jobs:
+  - job: terraform init
+    displayName: 'init'
+    steps:
+    - task: TerraformInstaller@1
+      inputs:
+        terraformVersion: 'latest'
+    - task: TerraformTask@5
+      inputs:
+        provider: 'azurerm'
+        command: 'init'
+        backendServiceArm: 'Nishant'
+        backendAzureRmStorageAccountName: 'storage552'
+        backendAzureRmContainerName: 'cont1'
+        backendAzureRmKey: 'terraform.tfstate'
