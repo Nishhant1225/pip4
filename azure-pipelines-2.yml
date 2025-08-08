@@ -1,0 +1,49 @@
+
+
+trigger:  none
+
+pool:
+ testing
+
+variables:
+  secret: Nishant
+stages:
+- stage: terraforminit
+  displayName: 'terraform init'
+  jobs:
+  - job: terraforminit
+    displayName: 'init'
+    steps:
+    - task: TerraformInstaller@1
+      inputs:
+        terraformVersion: 'latest'
+    - task: TerraformTask@5
+      inputs:
+        provider: 'azurerm'
+        command: 'init'
+        backendServiceArm: '$(secret)'
+        backendAzureRmStorageAccountName: 'storage552'
+        backendAzureRmContainerName: 'cont1'
+        backendAzureRmKey: 'terraform.tfstate'
+- stage: terraformplan
+  displayName: 'terraform plan'
+  jobs:
+  - job: terraformplan
+    displayName: 'plan'
+    steps:
+    - task: TerraformInstaller@1
+      inputs:
+        terraformVersion: 'latest'
+    - task: TerraformTask@5
+      inputs:
+        provider: 'azurerm'
+        command: 'init'
+        backendServiceArm: '$(secret)'
+        backendAzureRmStorageAccountName: 'storage552'
+        backendAzureRmContainerName: 'cont1'
+        backendAzureRmKey: 'terraform.tfstate'
+    - task: TerraformTask@5
+      inputs:
+        provider: 'azurerm'
+        command: 'plan'
+        environmentServiceNameAzureRM: '$(secret)'
